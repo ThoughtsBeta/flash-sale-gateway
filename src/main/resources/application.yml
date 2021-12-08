@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: flash-sale-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: flash-sale-app-router
+        uri: http://localhost:8090
+        predicates:
+          - Path=/api/**
